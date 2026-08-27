@@ -1,3 +1,7 @@
+> **Fork note.** A fork of [Unity-Technologies/com.unity.demoteam.hair](https://github.com/Unity-Technologies/com.unity.demoteam.hair)
+> that compiles and runs on Unity 6.3+, where `Object.GetInstanceID()` and
+> `RenderParams.instanceID` changed to `EntityId`. Also fixed `multi_compile` shader error. Nothing else differs from upstream.
+
 # Package: com.unity.demoteam.hair
 
 ![Header](Documentation~/Images/header_crop.png)
