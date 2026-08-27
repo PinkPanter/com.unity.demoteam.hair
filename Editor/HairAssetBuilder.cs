@@ -130,7 +130,7 @@ namespace Unity.DemoTeam.Hair
 
 				for (int i = 0; i != hairAsset.strandGroups.Length; i++)
 				{
-					hash.Append(hairAsset.strandGroups[i].meshAssetRoots.GetInstanceID());
+					hash.Append(ObjectId.Of(hairAsset.strandGroups[i].meshAssetRoots));
 					hash.Append(hairAsset.strandGroups[i].particlePosition);
 				}
 

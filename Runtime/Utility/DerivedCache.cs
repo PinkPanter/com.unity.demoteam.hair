@@ -109,12 +109,12 @@ namespace Unity.DemoTeam.Hair
 	{
 		public static Hash128 Compute<TObject>(TObject key) where TObject : UnityEngine.Object
 		{
-			return new Hash128((uint)key.GetInstanceID(), 0, 0, 0);
+			return new Hash128((uint)ObjectId.Of(key), 0, 0, 0);
 		}
 
 		public static Hash128 Compute(Mesh mesh)
 		{
-			return new Hash128((uint)mesh.GetInstanceID(), 0, 0, 0);//TODO content hash?
+			return new Hash128((uint)ObjectId.Of(mesh), 0, 0, 0);//TODO content hash?
 		}
 
 		public static Hash128 Compute(Texture2D texture)
@@ -122,7 +122,7 @@ namespace Unity.DemoTeam.Hair
 #if UNITY_EDITOR
 			return texture.imageContentsHash;
 #else
-			return new Hash128((uint)texture.GetInstanceID(), 0, 0, 0);
+			return new Hash128((uint)ObjectId.Of(texture), 0, 0, 0);
 #endif
 		}
 	}

@@ -91,7 +91,7 @@ namespace Unity.DemoTeam.Hair
 				type = RuntimeData.Type.Directional,
 				xform = new RuntimeTransform
 				{
-					handle = transform.GetInstanceID(),
+					handle = ObjectId.Of(transform),
 				},
 				emitter = new RuntimeEmitter
 				{
@@ -127,7 +127,7 @@ namespace Unity.DemoTeam.Hair
 				type = RuntimeData.Type.Spherical,
 				xform = new RuntimeTransform
 				{
-					handle = transform.GetInstanceID(),
+					handle = ObjectId.Of(transform),
 				},
 				emitter = new RuntimeEmitter
 				{
@@ -185,7 +185,7 @@ namespace Unity.DemoTeam.Hair
 				type = RuntimeData.Type.Turbine,
 				xform = new RuntimeTransform
 				{
-					handle = transform.GetInstanceID(),
+					handle = ObjectId.Of(transform),
 				},
 				emitter = new RuntimeEmitter
 				{

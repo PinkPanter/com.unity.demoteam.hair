@@ -39,14 +39,14 @@ namespace Unity.DemoTeam.Hair
 
 			public ulong GetSortKey()
 			{
-				var a = (ulong)hairAsset.GetInstanceID();
+				var a = (ulong)ObjectId.Of(hairAsset);
 				var b = (ulong)hairAssetGroupIndex;
 				return (a << 32) | b;
 			}
 
 			public ulong GetSortKey48()
 			{
-				var a = (ulong)hairAsset.GetInstanceID();
+				var a = (ulong)ObjectId.Of(hairAsset);
 				var b = (ulong)hairAssetGroupIndex & 0xffffuL;
 				return (a << 16) | b;
 			}
@@ -623,7 +623,7 @@ namespace Unity.DemoTeam.Hair
 							var attachmentTarget = settingsSkinning.rootsAttachTarget;
 							if (attachmentTarget != null && attachmentTarget.isActiveAndEnabled && attachmentTarget.executeOnGPU)
 							{
-								hash.Append(attachmentTarget.GetInstanceID());
+								hash.Append(ObjectId.Of(attachmentTarget));
 							}
 						}
 					}
@@ -1186,7 +1186,7 @@ namespace Unity.DemoTeam.Hair
 						rparams.shadowCastingMode = meshRenderer.shadowCastingMode;
 						rparams.receiveShadows = true;
 #if UNITY_2023_2_OR_NEWER
-						rparams.instanceID = this.GetInstanceID();
+						RenderParamsUtility.SetOwner(ref rparams, this);
 #endif
 					}
 
