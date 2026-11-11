@@ -1,10 +1,10 @@
 {
   "name": "com.unity.demoteam.hair",
   "displayName": "Demo Team Hair System",
-  "version": "0.19.0-preview.1",
+  "version": "0.19.0-preview.2",
   "unity": "2020.2",
   "unityRelease": "0f1",
-  "description": "An integrated solution for authoring / importing / simulating / rendering strand-based hair in Unity.",
+  "description": "MHBridge Importer fork of com.unity.demoteam.hair. Includes Unity 6.3+ fixes and skin attachment without additional dependencies. An integrated solution for authoring / importing / simulating / rendering strand-based hair in Unity.",
   "dependencies": {
       "com.unity.burst": "1.4.1",
       "com.unity.collections": "0.15.0-preview.21",

@@ -1,6 +1,7 @@
 > **Fork note.** A fork of [Unity-Technologies/com.unity.demoteam.hair](https://github.com/Unity-Technologies/com.unity.demoteam.hair)
 > that compiles and runs on Unity 6.3+, where `Object.GetInstanceID()` and
-> `RenderParams.instanceID` changed to `EntityId`. Also fixed `multi_compile` shader error. Nothing else differs from upstream.
+> `RenderParams.instanceID` changed to `EntityId`. Also fixed `multi_compile` shader error.
+> The skin attachment subsystem from `com.unity.demoteam.digital-human` is included in this package (namespace `Unity.DemoTeam.Hair.SkinAttach`), so skinning no longer requires that package or HDRP. Nothing else differs from upstream.
 
 # Package: com.unity.demoteam.hair
 
@@ -34,7 +35,6 @@
 		
 * Skinning
 	+ Easily attach strand roots to skinned geometry in a scene
-	[ *depends on **com.unity.demoteam.digital-human >= 0.1.1-preview*** ]
 
 * Simulation
 	+ Strand-based solver supporting tens of thousands of individual strands

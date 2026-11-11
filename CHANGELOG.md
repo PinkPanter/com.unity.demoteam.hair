@@ -5,6 +5,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.19.0-preview.2] - 2026-11-11
+
+### Added
+
+- Added skin attachment (`SkinAttachment`, `SkinAttachmentTarget`, and `SkinAttachmentData`) from `com.unity.demoteam.digital-human`.
+
+### Changed
+
+- Removed the optional dependency on `com.unity.demoteam.digital-human`. Root attachment no longer requires that package or HDRP.
+
+### Fixed
+
+- Fixed compilation on Unity 6.3 and later, where `Object.GetInstanceID()` and `RenderParams.instanceID` changed to `EntityId`.
+- Fixed a `multi_compile` shader error.
+
 ## [0.19.0-preview.1] - 2025-02-10
 
 ### Added
@@ -309,7 +324,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 <!--- LINKS --->
-[unreleased]: https://github.com/Unity-Technologies/com.unity.demoteam.hair/compare/0.19.0-preview.1...HEAD
+[unreleased]: https://github.com/PinkPanter/com.unity.demoteam.hair/compare/0.19.0-preview.2...HEAD
+[0.19.0-preview.2]: https://github.com/PinkPanter/com.unity.demoteam.hair/compare/0.19.0-preview.1...0.19.0-preview.2
 [0.19.0-preview.1]: https://github.com/Unity-Technologies/com.unity.demoteam.hair/compare/0.18.3-exp.1...0.19.0-preview.1
 [0.18.3-exp.1]: https://github.com/Unity-Technologies/com.unity.demoteam.hair/compare/0.18.2-exp.1...0.18.3-exp.1
 [0.18.2-exp.1]: https://github.com/Unity-Technologies/com.unity.demoteam.hair/compare/0.18.1-exp.1...0.18.2-exp.1
