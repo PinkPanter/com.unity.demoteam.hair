@@ -705,10 +705,6 @@ namespace Unity.DemoTeam.Hair
 			solverConstantsRoots._RootMeshTangentStride = rootMesh.HasVertexAttribute(VertexAttribute.Tangent) ? 1u : 0u;
 #endif
 
-#if !HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN_0_2_1_PREVIEW
-			solverConstantsRoots._RootMeshTangentStride = 0;//TODO remove this? (and therein assume that root mesh having tangents == root mesh having tangent frame)
-#endif
-
 			// update cbuffer
 			PushConstantBufferData(cmd, solverData.buffers.SolverCBufferRoots, solverConstantsRoots);
 

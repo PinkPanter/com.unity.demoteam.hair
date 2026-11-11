@@ -13,9 +13,7 @@ using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine.Rendering.HighDefinition;
 #endif
 
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN
-using Unity.DemoTeam.DigitalHuman;
-#endif
+using Unity.DemoTeam.Hair.SkinAttach;
 
 namespace Unity.DemoTeam.Hair
 {
@@ -72,9 +70,7 @@ namespace Unity.DemoTeam.Hair
 
 				public GameObject rootMeshContainer;
 				public MeshFilter rootMeshFilter;
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN
 				public SkinAttachment rootMeshAttachment;
-#endif
 
 				public GameObject strandMeshContainer;
 				public MeshFilter strandMeshFilter;
@@ -528,7 +524,6 @@ namespace Unity.DemoTeam.Hair
 			if (strandGroupInstances == null)
 				return;
 
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN
 #if UNITY_EDITOR
 			var isPrefabInstance = UnityEditor.PrefabUtility.IsPartOfPrefabInstance(this);
 			if (isPrefabInstance)
@@ -597,20 +592,16 @@ namespace Unity.DemoTeam.Hair
 					}
 				}
 			}
-#endif
 		}
 		#endregion
 
 		#region Update Prerequisite
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN_0_2_0_PREVIEW
 		private HashSet<SkinAttachmentTarget> preqGPUAttachmentTargets = new HashSet<SkinAttachmentTarget>();
 		private Hash128 preqGPUAttachmentTargetsHash = new Hash128();
-#endif
 		private int preqCountdown = 1;
 
 		void UpdatePrerequisite()
 		{
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN_0_2_0_PREVIEW
 			var hash = new Hash128();
 			{
 				if (strandGroupInstances != null)
@@ -659,14 +650,10 @@ namespace Unity.DemoTeam.Hair
 			}
 
 			preqCountdown = 1 + preqGPUAttachmentTargets.Count;
-#else
-			preqCountdown = 1;
-#endif
 		}
 
 		void ReleasePrerequisite()
 		{
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN_0_2_0_PREVIEW
 			foreach (var preq in preqGPUAttachmentTargets)
 			{
 				preq.afterGPUAttachmentWorkCommitted -= HandlePrerequisite;
@@ -674,7 +661,6 @@ namespace Unity.DemoTeam.Hair
 
 			preqGPUAttachmentTargets.Clear();
 			preqGPUAttachmentTargetsHash = new Hash128();
-#endif
 		}
 
 		void HandlePrerequisite()
@@ -1332,12 +1318,10 @@ namespace Unity.DemoTeam.Hair
 
 		public static Quaternion GetRootMeshSkinningRotation(in GroupInstance strandGroupInstance, in SettingsSkinning settingsSkinning)
 		{
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN
 			if (settingsSkinning.rootsAttach && settingsSkinning.rootsAttachTarget != null)
 			{
 				return settingsSkinning.rootsAttachTargetBone.skinningBone.rotation;
 			}
-#endif
 			return strandGroupInstance.sceneObjects.rootMeshFilter.transform.rotation;
 		}
 

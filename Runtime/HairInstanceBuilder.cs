@@ -9,9 +9,7 @@ using Unity.Mathematics;
 using UnityEngine.Rendering.HighDefinition;
 #endif
 
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN
-using Unity.DemoTeam.DigitalHuman;
-#endif
+using Unity.DemoTeam.Hair.SkinAttach;
 
 namespace Unity.DemoTeam.Hair
 {
@@ -26,10 +24,8 @@ namespace Unity.DemoTeam.Hair
 				{
 					ref readonly var strandGroupInstance = ref strandGroupInstances[i];
 
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN
 					if (strandGroupInstance.sceneObjects.rootMeshAttachment != null)
 						strandGroupInstance.sceneObjects.rootMeshAttachment.Detach(false);
-#endif
 
 					CoreUtils.Destroy(strandGroupInstance.sceneObjects.groupContainer);
 					CoreUtils.Destroy(strandGroupInstance.sceneObjects.materialInstance);
@@ -108,11 +104,9 @@ namespace Unity.DemoTeam.Hair
 						strandGroupInstance.sceneObjects.rootMeshFilter = CreateComponent<MeshFilter>(strandGroupInstance.sceneObjects.rootMeshContainer, hideFlags);
 						strandGroupInstance.sceneObjects.rootMeshFilter.sharedMesh = strandGroups[j].meshAssetRoots;
 
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN
 						strandGroupInstance.sceneObjects.rootMeshAttachment = CreateComponent<SkinAttachment>(strandGroupInstance.sceneObjects.rootMeshContainer, hideFlags);
 						strandGroupInstance.sceneObjects.rootMeshAttachment.attachmentType = SkinAttachment.AttachmentType.Mesh;
 						strandGroupInstance.sceneObjects.rootMeshAttachment.forceRecalculateBounds = true;
-#endif
 					}
 
 					// create scene objects for strand mesh

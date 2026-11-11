@@ -623,12 +623,7 @@ namespace Unity.DemoTeam.Hair
 
 		static StructValidation ValidationGUISkinning(object userData)
 		{
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN
 			return StructValidation.Pass;
-#else
-			EditorGUILayout.HelpBox("Root attachments require package: 'com.unity.demoteam.digital-human >= 0.1.1-preview'.", MessageType.None, wide: true);
-			return StructValidation.Inaccessible;
-#endif
 		}
 
 		static StructValidation ValidationGUIGeometry(object userData) => StructValidation.Pass;

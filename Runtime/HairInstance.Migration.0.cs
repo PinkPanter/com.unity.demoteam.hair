@@ -3,9 +3,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Rendering;
 
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN
-using Unity.DemoTeam.DigitalHuman;
-#endif
+using Unity.DemoTeam.Hair.SkinAttach;
 
 namespace Unity.DemoTeam.Hair
 {

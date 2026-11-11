@@ -1,9 +1,7 @@
 using System;
 using UnityEngine;
 
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN
-using Unity.DemoTeam.DigitalHuman;
-#endif
+using Unity.DemoTeam.Hair.SkinAttach;
 
 namespace Unity.DemoTeam.Hair
 {
@@ -69,7 +67,6 @@ namespace Unity.DemoTeam.Hair
 		[Serializable]
 		public struct SettingsSkinning
 		{
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN
 			[LineHeader("Skinning")]
 
 			[ToggleGroup]
@@ -78,14 +75,11 @@ namespace Unity.DemoTeam.Hair
 			public SkinAttachmentTarget rootsAttachTarget;
 			[HideInInspector]
 			public PrimarySkinningBone rootsAttachTargetBone;
-#endif
 
 			public static readonly SettingsSkinning defaults = new SettingsSkinning()
 			{
-#if HAS_PACKAGE_DEMOTEAM_DIGITALHUMAN
 				rootsAttach = false,
 				rootsAttachTarget = null,
-#endif
 			};
 		}
 	}

@@ -5,6 +5,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [Unreleased]
+
+### Added
+
+- Added skin attachment (`SkinAttachment`, `SkinAttachmentTarget`, and `SkinAttachmentData`) from `com.unity.demoteam.digital-human`.
+
+### Changed
+
+- Removed the optional dependency on `com.unity.demoteam.digital-human`. Root attachment no longer requires that package or HDRP.
+
+### Fixed
+
+- Fixed compilation on Unity 6.3 and later, where `Object.GetInstanceID()` and `RenderParams.instanceID` changed to `EntityId`.
+- Fixed a `multi_compile` shader error.
+
 ## [0.19.0-preview.1] - 2025-02-10
 
 ### Added
