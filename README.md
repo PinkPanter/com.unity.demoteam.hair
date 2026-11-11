@@ -1,7 +1,10 @@
-> **Fork note.** A fork of [Unity-Technologies/com.unity.demoteam.hair](https://github.com/Unity-Technologies/com.unity.demoteam.hair)
-> that compiles and runs on Unity 6.3+, where `Object.GetInstanceID()` and
-> `RenderParams.instanceID` changed to `EntityId`. Also fixed `multi_compile` shader error.
-> The skin attachment subsystem from `com.unity.demoteam.digital-human` is included in this package (namespace `Unity.DemoTeam.Hair.SkinAttach`), so skinning no longer requires that package or HDRP. Nothing else differs from upstream.
+> **Fork note.** A fork of [Unity-Technologies/com.unity.demoteam.hair](https://github.com/Unity-Technologies/com.unity.demoteam.hair),
+> maintained for [MHBridge Importer](https://assetstore.unity.com/packages/tools/integration/mhbridge-importer-403996).
+> The fork compiles and runs on Unity 6.3+, where `Object.GetInstanceID()` and
+> `RenderParams.instanceID` changed to `EntityId`, and fixes a `multi_compile` shader error.
+> It also includes the skin attachment subsystem from `com.unity.demoteam.digital-human`
+> (namespace `Unity.DemoTeam.Hair.SkinAttach`), so skinning no longer requires that package or HDRP.
+> Nothing else differs from upstream.
 
 # Package: com.unity.demoteam.hair
 
